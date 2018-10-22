@@ -2,7 +2,8 @@ class TypeMismatchError < TypeError; end
 class Transfer
   # your code here
   def initialize(from, to, amount)
-    raise TypeMismatchError, "Sender object class #{from.class} received, BankAccount expected" if !from.is_a?(BankAccount)
+    raise TypeMismatchError, "Sender object class is #{from.class}, BankAccount expected" if !from.is_a?(BankAccount)
+    raise TypeMismatchError, "Receiver object class is #{to.class}, BankAccount expected" if !to.is_a?(BankAccount)
     @sender = from
     @receiver = to
     @amount = amount
@@ -15,7 +16,7 @@ class Transfer
 
   def execute_transaction
     if (@status == pending)
-      
+
     end
   end
 end
