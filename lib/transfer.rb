@@ -12,7 +12,7 @@ class Transfer
   end
 
   def valid?
-    (@sender.valid?) && (@receiver.valid?) && (status == "pending")
+    (@sender.valid? && @sender.balance > @amount) && (@receiver.valid?) && (status == "pending")
   end
 
   def execute_transaction
