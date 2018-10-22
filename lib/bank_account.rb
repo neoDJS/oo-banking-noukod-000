@@ -7,4 +7,8 @@ class BankAccount
     @status = "open"
   end
 
+  def name=(name="")
+    raise AccessError, ""
+  end
+
 end
