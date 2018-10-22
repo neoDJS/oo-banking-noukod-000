@@ -1,6 +1,7 @@
 class TypeMismatchError < TypeError; end
 class Transfer
   # your code here
+  attr_reader :sender, :receiver, :status, :amount
   def initialize(from, to, amount)
     raise TypeMismatchError, "Sender object class is #{from.class}, BankAccount expected" if !from.is_a?(BankAccount)
     raise TypeMismatchError, "Receiver object class is #{to.class}, BankAccount expected" if !to.is_a?(BankAccount)
