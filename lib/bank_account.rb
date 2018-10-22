@@ -8,7 +8,7 @@ class BankAccount
   end
 
   def name=(name="")
-    raise AccessError, ""
+    raise AccessError, "You can't change the name of the Bank Account"
   end
 
 end
