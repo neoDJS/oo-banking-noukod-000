@@ -18,6 +18,7 @@ class Transfer
     if (@status == pending)
       @sender.deposit(-1*@amount) if @sender.balance > @amount
       @receiver.deposit(@amount)
+      @status = "complete"
     end
   end
 end
