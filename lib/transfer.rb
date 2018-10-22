@@ -23,4 +23,12 @@ class Transfer
       @status = "rejected"
     end
   end
+
+  def reverse_transfer
+    if(@status == "complete")
+      @receiver.deposit(-1*@amount) if @receiver.balance > @amount
+      @sender.deposit(@amount)
+      @status = "reversed"
+    end
+  end
 end
