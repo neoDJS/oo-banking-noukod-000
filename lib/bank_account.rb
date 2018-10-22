@@ -1,4 +1,4 @@
-class AccessError < Errno; end
+class AccessError < KeyError; end
 class BankAccount
   attr_accessor :balance, :status
   attr_reader :name
