@@ -11,4 +11,11 @@ class BankAccount
     raise AccessError, "You can't change the name of the Bank Account"
   end
 
+  def deposit(money=0)
+  end
+
+  def display_balance
+    @balance    
+  end
+
 end
